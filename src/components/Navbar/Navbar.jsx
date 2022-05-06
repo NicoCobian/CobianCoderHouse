@@ -1,6 +1,7 @@
+import React from 'react'
 import Carwidget from '../CarWidget/CarWidget'
 import {Navbar, Container, Nav, NavDropdown,} from "react-bootstrap";
-import React from 'react'
+
 
 export default function Header () {
 
@@ -31,19 +32,12 @@ const Button = ({texto}) => {
       </Nav>
     </Navbar.Collapse>
   </Container>
+
   <Carwidget/>
 
+
 </Navbar>
-
-<Button texto= "CLICKEAME"/>
-<Button texto= "CLICKEAME"/>
-<Button texto= "CLICKEAME"/>
-<Button texto= "CLICKEAME"/>
-<Button texto= "CLICKEAME"/>
-
 </>
-
-
   )
 }
 
