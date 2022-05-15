@@ -1,10 +1,11 @@
 import Item from "../Item/Item";
+import { Products } from "../ItemListContainer/ItemList";
 
 
 
-export function ItemDetail ({ Products }){
+export function ItemDetail (){
   return(
-    <Item Products={1}/>
+    <Item {Products}/>
     
   )
   
