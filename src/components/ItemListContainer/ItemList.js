@@ -1,3 +1,5 @@
+import React from "react"
+import Item from "../Item/Item"
 
 export const Products = [
 {
@@ -43,3 +45,10 @@ export const Products = [
   Image: "/Images/s21-ultra.jpg"
 }
 ]
+
+const ItemList = ({data = [] }) =>{
+  return(
+    data.map(Products => <Item key={Products.id} info={Products} />)
+  );
+}
+export default ItemList;

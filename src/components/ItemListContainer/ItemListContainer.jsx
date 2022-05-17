@@ -1,48 +1,34 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import ItemCount from "../ItemCount";
 import {Products} from "./ItemList";
 import Item from "../Item/Item";
+import ItemList from "/i"
 
 
-export default function ItemListContainer({ greeting }) {
+    
+export const ItemListContainer = ({greeting}) => {
+  const[data, setData] = useState([]);
+
+  useEffect(() => {
+    const getData = new Promise(resolve => {
+      setTimeout (() => {
+        resolve(Products);
+
+      }, 3000);
+    });
+    getData.then(res => setData(res));
+
+}, [])
 
 const onAdd = (quantity) => {
-  console.log(`compraste ${quantity} unidades`);
+  console.log(`Compraste ${quantity} unidades`);
 }
-
-const task = new Promise ((resolve, reject) => {
-  setTimeout(() => {
-    resolve (Products);
-  }, 2000);
-
-})
-
-task.then((result) => {
-  console.log(result)
-}, err => {
-  console.log (err)
-}).catch((err) => {
-  console.log(err)
-})
-
-console.log(Products.map((Products) => Products.title));
-
- return (
-<>
- <div>
-
-  <h1>This is a container {greeting}</h1>
-  {Products.map((Products, index) => (
-    <Item Products = {Products} key ={Products.id}/>
-  )
-  )}
-  
-  <ItemCount initial={1} stock={5} onAdd={onAdd} />
-
- </div>
- 
+return(
+  <>
+  <title greeting={greeting} />
+  <ItemCount initial={3} stock={5} onAdd={onAdd} />
+  <ItemList data={data}/>
   </>
- )
-
+);
 }
-    
+export default ItemListContainer;
