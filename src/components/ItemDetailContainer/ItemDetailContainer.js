@@ -1,17 +1,36 @@
-//import axios from "axios";
-//import React from "react";
-//import { Products } from "../ItemListContainer/ItemList";
 
-//export default function ItemDetailCointainer () {
-  //const [item, setItem] = React.useState([])
-  
+import React, { useEffect, useState } from 'react';
 
-  //const getItem = () =>{
-    //axios
-    //.get()
-    //.then((res) => {
-      //setItem(res.data.results[3])
-    //})
-    //console.log(getItem)
-  //}
-  //}
+import { ItemDetail } from "../../ItemDetail/ItemDetail";
+
+import { Products } from "../ItemListContainer/ItemList";
+
+
+export default function ItemDetailContainer() {
+
+ const [product, setProduct] = useState({});
+
+ useEffect(() => {
+
+  const getItem = new Promise((resolve) => {
+
+   setTimeout(() => {
+
+    resolve(Products);
+
+   }, 2000);
+
+  })
+
+  getItem.then(res => {
+
+   setProduct(res.find(prod => prod.id === 1))
+  })
+ }, [])
+
+ return (
+
+  <ItemDetail product={product} />
+
+ );
+}

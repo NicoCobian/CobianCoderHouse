@@ -1,16 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "./views/home";
-import { Products } from "./views/products";
-import { Cart } from "./views/cart";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import Header from "./components/Navbar/Navbar";
 
 function App() {
 return(
 <BrowserRouter>
+<Header/>
 <Routes>
-  <Route exact path= "/" element={<Home />} />
-  <Route exact path= "/products" element={<Products />} />
+  <Route exact path= "/" element={<Header />} />
+  <Route exact path= "/products" element={<ItemListContainer />} />
+  <Route exact path= "/products/:id" element={<ItemListContainer />} />
+
   <Route exact path= "/cart" element={<Cart />} />
 </Routes>
 </BrowserRouter>
+
 )
 }
+
+export default App;

@@ -8,7 +8,7 @@ import ItemList from "./ItemList";
 
     
 export const ItemListContainer = ({greeting}) => {
-  const[data, setData] = useState([]);
+  const[data, setData] = useState({});
 
   useEffect(() => {
     const getData = new Promise(resolve => {
