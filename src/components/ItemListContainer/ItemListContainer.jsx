@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import ItemCount from "../ItemCount";
 import {Products} from "./ItemList";
-import Item from "../Item/Item";
 import ItemList from "./ItemList";
 
 
